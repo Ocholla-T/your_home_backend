@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// device schema to be used to create devices
 const deviceSchema = new mongoose.Schema({
   device: {
     type: String,
