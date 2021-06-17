@@ -1,7 +1,8 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
 // device schema to be used to create devices
-const deviceSchema = new mongoose.Schema({
+const deviceSchema = new Schema({
   device: {
     type: String,
     required: [true, 'Please enter your device'],
@@ -20,4 +21,4 @@ const deviceSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('Device', deviceSchema);
+export const Device = mongoose.model('Device', deviceSchema);
