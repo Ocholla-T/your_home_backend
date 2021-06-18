@@ -1,18 +1,18 @@
-import { Device } from '../models/device.model';
+import { Device } from '../models/device.model.js';
 
-export const listAllDevices = (req, res) => {
+export const listAllDevices = async (req, res) => {
   const allDevices = await Device.find({}).catch((error) => console.error(error));
 
   res.json(allDevices);
 };
 
-export const readOneDevice = (req, res) => {
+export const readOneDevice = async (req, res) => {
   const device = await Device.findById(id).catch((error) => console.error(error));
 
   res.json(device);
 };
 
-export const createDevice = (req, res) => {
+export const createDevice = async (req, res) => {
   const device = new Device({
     device: req.body.device,
     buyingPrice: req.body.buyingPrice,
@@ -24,6 +24,6 @@ export const createDevice = (req, res) => {
   res.json(newDevice);
 };
 
-export const deleteOneDevice = (req, res) => {
+export const deleteOneDevice = async (req, res) => {
   await Device.deleteOne({ _id: req.body.device.id }).catch((error) => console.error(error));
 };
