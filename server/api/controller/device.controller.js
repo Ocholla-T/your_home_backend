@@ -14,10 +14,10 @@ export const readOneDevice = async (req, res) => {
 
 export const createDevice = async (req, res) => {
   const device = new Device({
-    device: req.body.device,
-    buyingPrice: req.body.buyingPrice,
-    averageLifespan: req.body.averageLifespan,
-    yearsInUse: req.body.yearsInUse,
+    device: req.body,
+    buyingPrice: req.body,
+    averageLifespan: req.body,
+    yearsInUse: req.body,
   });
 
   const newDevice = await device.save().catch((error) => console.error(error));
