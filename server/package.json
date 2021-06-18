@@ -5,6 +5,7 @@
   "main": "server.js",
   "author": "Ocholla",
   "license": "MIT",
+  "type": "module",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
